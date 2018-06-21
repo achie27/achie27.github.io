@@ -1,134 +1,105 @@
+
+#contain { display:block; }
+
+@media only screen and (orientation:portrait){
+
+  #contain {
+
+    height: 100vw;
+
+    -webkit-transform: rotate(90deg);
+
+    -moz-transform: rotate(90deg);
+
+    -o-transform: rotate(90deg);
+
+    -ms-transform: rotate(90deg);
+
+    transform: rotate(90deg);
+
+  }
+
+}
+
+@media only screen and (orientation:landscape){
+
+  #contain {
+
+     -webkit-transform: rotate(0deg);
+
+     -moz-transform: rotate(0deg);
+
+     -o-transform: rotate(0deg);
+
+     -ms-transform: rotate(0deg);
+
+     transform: rotate(0deg);
+
+  }
+
+}
 #container {
-				top: 0px;
-				left: 0px;
-				text-align: center;
-			}
-			#name_box{
-				top: 7vh;
-				left: 0px;	
-				width: 33vw;
-				height : 90vh;
-				position: absolute;
-				background: lightblue;	
-				display: flex;
-			}
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+#name_box{
+	top: 7vh;
+	left: 0px;	
+	width: 33vw;
+	height : 90vh;
+	position: absolute;
+	background: lightblue;	
+	display: flex;
+}
 
-			#yours_truly {
-				margin:auto;
-			}
-			#top_box{
-				height: 85vh;
-				width: 67vw;
-				left:33vw;
-				top:7vh;
-				position: absolute;
-				background: #1b1c1d;
-				overflow: hidden;
-				display: inline-block;
-				-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-				transform: rotate(180deg);
-			}
-			#a_box {
-				width: 100%;
-				height: 100%;
-				text-align: center;
-			}
-			.boxes_in_box {
-				width: 22.3vw;
-				height: 42.5vh;
-				float: left;
-				/*background: tomato	;*/
-				border: none;
-				display: inline-block;
-				transform: rotate(180deg);
-			}
-			#upper_box, #bottom_box {
-				position: fixed;
-				left: 0;
-				height: 17vh;
-				width: 100vw;
-				background: black;
-			}
-			#upper_box {
-				top:0;
-				-webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-				clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-			}
+#yours_truly {
+	margin:auto;
+}
+#top_box{
+	height: 85vh;
+	width: 67vw;
+	left:33vw;
+	top:7vh;
+	position: absolute;
+	background: #1b1c1d;
+	overflow: hidden;
+	display: inline-block;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	transform: rotate(180deg);
+}
+#a_box {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.boxes_in_box {
+	width: 22.3vw;
+	height: 42.5vh;
+	float: left;
+	/*background: tomato	;*/
+	border: none;
+	display: inline-block;
+	transform: rotate(180deg);
+}
+#upper_box, #bottom_box {
+	position: fixed;
+	left: 0;
+	height: 17vh;
+	width: 100vw;
+	background: black;
+}
+#upper_box {
+	top:0;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+}
 
-			#bottom_box {
-				bottom:0;
-				-webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-				clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-				transform: rotate(180deg);
-			}
+#bottom_box {
+	bottom:0;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+	transform: rotate(180deg);
+}
 
-/*
-#container {
-				top: 0px;
-				left: 0px;
-				text-align: center;
-			}
-			#name_box{
-				top: 0px;
-				left: 0px;	
-				width: 40vw;
-				height : 100vh;
-				position: absolute;
-				background: lightblue;	
-				display: flex;
-			}
-
-			#yours_truly {
-				width: 40vw;
-				height : 20vh;
-				margin:auto;
-			}
-			
-			#top_box{
-				height: 90vh;
-				width: 60vw;
-				left:40vw;
-				top:0px;
-				position: absolute;
-				background: tomato;
-				overflow: hidden;
-				display: inline-block;
-				-webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-				clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-				transform: rotate(180deg);
-			}
-			#a_box {
-				width: 100%;
-				height: 100%;
-				text-align: center;
-			}
-			.boxes_in_box {
-				width: 19vw;
-				height: 45vh;
-				float: left;
-				border: 1px solid;
-				line-height: 45vh;
-				display: inline-block;
-				transform: rotate(180deg);
-			}
-
-			.boxes_in_box : hover{
-				background-color: #C0C1C2;
-				background-image: none;
-				color: rgba(0, 0, 0, 0.95);
-			}
-
-			#bottom_box {
-				position:fixed;
-				bottom:0;
-				left: 0;
-				height: 20vh;
-				width: 100vw;
-				background: lightgreen;
-				-webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
-				clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
-				transform: rotate(180deg);
-			}
-
-*/
