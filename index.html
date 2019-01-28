@@ -5,14 +5,6 @@
 		<link rel="stylesheet" type="text/css" href="./css/semantic.min.css" />
 		<link rel="stylesheet" type="text/css" href="./css/gobledegook.css" />
 
-		<script type="text/javascript">
-			PleaseRotateOptions = {
-	        	allowClickBypass: false,
-	        	subMessage : ""
-	    	};
-		</script>
-		<script src="./css/pleaserotate.min.js" />		
-		
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117401919-1"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -22,12 +14,61 @@
 			gtag('config', 'UA-117401919-1');
 		</script>
 
+		<script type="text/javascript">
+			window.onload = () => {
+				let httpRequest;
+				if (window.XMLHttpRequest){
+				    httpRequest = new XMLHttpRequest();
+				} else if (window.ActiveXObject){ 				    
+					httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				httpRequest.onreadystatechange = () => {
+					let githubEvents = JSON.parse(httpRequest.responseText);
+					console.log(githubEvents);
+
+					for(let event of githubEvents){
+						if(event['type'] == 'PushEvent'){
+							let ele = document.querySelector('#latest-commit a');
+							ele.innerText =	"#" + event.payload.head.slice(0, 7);
+							ele.href = "https://github.com/"+event.repo.name+"/commit/"+event.payload.head;
+							break;
+						}
+					}
+				}
+
+				httpRequest.open('GET', 'https://api.github.com/users/achie27/events');
+				httpRequest.send();
+			};
+
+		</script>
+
 	</head>
 	<body>
-		<div id="container">
-				
-			<div id="name_box">
-				<div id="yours_truly">
+		<header>
+			<div class="container">
+				<div class="header-inner">
+					<div class="header-banner">
+						<div class="header-banner-content">
+							<font size="3" color="white">
+								Open to new-grad SWE roles. Hit me up if I am a match.
+							</font>
+						</div>
+					</div>
+					<div class="latest-commit-wrapper">
+						<div class="latest-commit-wrapper-content">
+							<div id="latest-commit">
+								<span>Latest commit</span> -  
+								<a target="_blank" href=""></a>
+							</div>	
+						</div>
+					</div>
+				</div>				
+			</div>
+		</header>
+		<div class="details">
+			<div class="me">
+				<div class="me-content">
 					<font size="10">Archit</font>
 					<br/><br/>
 					<font size="10">Mathur</font>
@@ -35,67 +76,63 @@
 					<font color="grey" size="3"><b>CS Senior @ SKIT, Jaipur</b></font>
 				</div>
 			</div>
-			<div id="top_box">
-				<div id="a_box">
-					
-					<div class="boxes_in_box" title="weird text lol">
-						<a href="./resume/" target="_blank">
-							<button class="ui black button" style="width: 22.3vw; height: 42.5vh;line-height: 10vh;">
-								<font color="white" size="5">RESUME</font>
-							</button>
-						</a>
-					</div>
-					<div class="boxes_in_box">
-						<a href="https://angel.co/architmathur" target="_blank">
-							<button	class="ui black button" style="width: 22.3vw; height: 42.5vh;line-height: 10.625vh;">
-								<center><i class="purple angellist icon" style="font-size: 6em"></i></center>
-							</button>
-						</a>
-					</div>
-					<div class="boxes_in_box">
-						<a href="https://www.linkedin.com/in/archit-mathur/" target="_blank">
-							<button	class="ui black button" style="width: 22.3vw; height: 42.5vh;line-height: 10.625vh;">
-								<center><i class="blue linkedin icon" style="font-size: 6em"></i></center>
-							</button>
-						</a>
-					</div>
-					<div class="boxes_in_box">
-						<a href="https://medium.com/@achie27" target="_blank">
-							<button	class="ui black button" style="width: 22.3vw; height: 42.5vh;line-height: 45.25vh;">
-								<center><i class="white medium icon" style="font-size: 6em"></i></center>
-							</button>
-						</a>
-					</div>
-					<div class="boxes_in_box">
-						<a href="https://www.quora.com/profile/Archit-Mathur-7" target="_blank">
-							<button	class="ui black button" style="width: 22.3vw; height: 42.5vh;line-height: 45.25vh;">
-								<center><i class="red quora icon" style="font-size: 6em"></i></center>
-							</button>
-						</a>
-					</div>
-					<div class="boxes_in_box">
-						<a href="https://www.github.com/achie27" target="_blank">
-							<button	class="ui black button" style="width: 22.3vw; height: 42.5vh;line-height: 45.25vh;">
-								<center><i class="olive github icon" style="font-size: 6em"></i></center>
-							</button>
-						</a>
-					</div>
+			<div class="my-profiles">
+				<div class="my-profiles-wrapper-item">
+					<a href="https://github.com/achie27">
+						<div class="my-profiles-item">
+							<i class="olive github icon"></i>
+						</div>					
+					</a>
+				</div>
+				<div class="my-profiles-wrapper-item">
+					<a href="https://www.quora.com/profile/Archit-Mathur-7">
+						<div class="my-profiles-item">
+							<i class="red quora icon"></i>
+						</div>
+					</a>
+				</div>
+				<div class="my-profiles-wrapper-item">
+					<a href="https://medium.com/@achie27">
+						<div class="my-profiles-item">
+							<i class="white medium icon"></i>
+						</div>
+					</a>
+				</div>
+				<div class="my-profiles-wrapper-item">
+					<a href="https://www.linkedin.com/in/archit-mathur/">
+						<div class="my-profiles-item">
+							<i class="blue linkedin icon"></i>
+						</div>
+					</a>
+				</div>
+				<div class="my-profiles-wrapper-item">
+					<a href="https://angel.co/architmathur">
+						<div class="my-profiles-item">
+							<i class="purple angellist icon"></i>
+						</div>
+					</a>
+				</div>
+				<div class="my-profiles-wrapper-item">
+					<a href="./resume/">
+						<div class="my-profiles-item">
+							<h2>resume</h2>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
-		<div id="upper_box"></div>
-		<div id="bottom_box"></div>	
-
-		<div style="position:fixed;top:7vh; left: 2vw">
-			<font size="3" color="white">Open to new-grad SWE roles! Hit me up if I am a match.</font>
-		</div> 
-
-		<div style="position:fixed;bottom:7vh; right: 2vw">
-			<font size="3" color="white">
-				<a href="mailto:architmathur2011@gmail.com">
-					Mail me!
-				</a>
-			</font>
-		</div>
+		<footer>
+			<div class="container">
+				<div class="footer-inner">
+					<div class="footer-text">
+						<font size="3" color="white">
+							<a href="mailto:architmathur2011@gmail.com">
+								Mail me!
+							</a>
+						</font>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>

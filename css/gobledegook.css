@@ -1,66 +1,180 @@
-
-#container {
-	top: 0px;
-	left: 0px;
-	text-align: center;
-}
-#name_box{
-	top: 7vh;
-	left: 0px;	
-	width: 33vw;
-	height : 90vh;
-	position: absolute;
-	background: lightblue;	
-	display: flex;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-#yours_truly {
-	margin:auto;
+.container {
+	width: 80%;
+	margin: auto;
 }
-#top_box{
-	height: 85vh;
-	width: 67vw;
-	left:33vw;
-	top:7vh;
-	position: absolute;
-	background: #1b1c1d;
-	overflow: hidden;
-	display: inline-block;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	transform: rotate(180deg);
+
+header {
+	background-color: black;
 }
-#a_box {
-	width: 100%;
-	height: 100%;
-	text-align: center;
+
+.header-inner {
+	height: 12.5vh;
 }
-.boxes_in_box {
-	width: 22.3vw;
-	height: 42.5vh;
+
+.header-banner {
 	float: left;
-	/*background: tomato	;*/
-	border: none;
-	display: inline-block;
-	transform: rotate(180deg);
-}
-#upper_box, #bottom_box {
-	position: fixed;
-	left: 0;
-	height: 17vh;
-	width: 100vw;
-	background: black;
-}
-#upper_box {
-	top:0;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+	width: 60%;
+	height: 100%;
 }
 
-#bottom_box {
-	bottom:0;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-	transform: rotate(180deg);
+.header-banner-content, .latest-commit-wrapper-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
 }
 
+.latest-commit-wrapper {
+	float: right;
+	width: 40%;
+	height: 100%;
+}
+
+.latest-commit-wrapper-content {
+	float: right;
+}
+
+#latest-commit {
+	padding: 10px;
+	background-color: #1b1c1d;
+	color: white;
+	font-weight: 700;
+}
+
+#latest-commit a {
+	color: red;
+	font-size: medium;
+}
+
+#latest-commit:hover {
+	background-color: red;
+	cursor: pointer;
+}
+
+#latest-commit:hover a {
+	color: #1b1c1d;
+}
+
+.details {
+	width: 100%;
+	height : 75vh;
+}
+
+.me {
+	width: 34%;
+	height: 100%;
+	background-color: lightblue;
+	float: left;
+}
+
+.me-content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.my-profiles {
+	width: 66%;
+	height: 100%;
+	float: left;
+}
+
+.my-profiles-item {
+	width: 33.3333333%;
+	height: 37.5vh;
+	float: left;
+	background-color: #1b1c1d;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	cursor: pointer;
+}
+
+.my-profiles-item:hover {
+	background-color: #27292a;
+}
+
+.my-profiles-item:active {
+	background-color: #343637;
+}
+
+.my-profiles-item i {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 6em;
+}
+
+footer {
+	background-color: black;
+}
+
+.footer-inner {
+	clear: both;
+	height: 12.5vh;
+}
+
+.footer-text {
+	clear: both;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
+}	
+
+.footer-text font {
+	float: right;
+}
+
+@media only screen and (max-width: 800px) {
+	.header-inner {
+		height: 50px;
+	}
+	.header-inner font {
+		font-size: small;
+	}
+
+	.header-banner {
+		width: 100%;
+		text-align: center;
+	}
+
+	.latest-commit-wrapper {
+		display: none;	
+	}
+
+	.me {
+		height: 300px;
+		width: 100%;
+	}
+
+	.my-profiles {
+		width: 100%;
+		height: auto;
+	}
+
+	.my-profiles-item {
+		width: 50%;
+		height: 200px;
+	}
+
+	.footer-inner {
+		height: 50px;
+	}
+	.footer-inner font {
+		font-size: small;
+	}
+}
