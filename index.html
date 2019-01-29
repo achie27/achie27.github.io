@@ -26,7 +26,6 @@
 
 				httpRequest.onreadystatechange = () => {
 					let githubEvents = JSON.parse(httpRequest.responseText);
-					console.log(githubEvents);
 
 					for(let event of githubEvents){
 						if(event['type'] == 'PushEvent'){
