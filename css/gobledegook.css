@@ -82,6 +82,10 @@ header {
 	justify-content: center;
 }
 
+.me-content font {
+	margin : 12.5px;
+}
+
 .my-profiles {
 	width: 66%;
 	height: 100%;
