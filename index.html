@@ -1,136 +1,144 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Archit Mathur | achie27 | achie27_</title>
-		<link rel="stylesheet" type="text/css" href="./css/semantic.min.css" />
-		<link rel="stylesheet" type="text/css" href="./css/gobledegook.css" />
-		<meta content="width=device-width, initial-scale=1" name="viewport" />
+  <head>
+    <title>Archit Mathur | achie27 | achie27_</title>
+    <link rel="stylesheet" type="text/css" href="./css/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/gobledegook.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117401919-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			
-			gtag('js', new Date());
-			gtag('config', 'UA-117401919-1');
-		</script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-117401919-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-		<script type="text/javascript">
-			window.onload = () => {
-				let httpRequest;
-				if (window.XMLHttpRequest){
-				    httpRequest = new XMLHttpRequest();
-				} else if (window.ActiveXObject){ 				    
-					httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-				}
+      gtag("js", new Date());
+      gtag("config", "UA-117401919-1");
+    </script>
 
-				httpRequest.onreadystatechange = () => {
-					let githubEvents = JSON.parse(httpRequest.responseText);
+    <script type="text/javascript">
+      window.onload = () => {
+        let httpRequest;
+        if (window.XMLHttpRequest) {
+          httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
 
-					for(let event of githubEvents){
-						if(event['type'] == 'PushEvent'){
-							let ele = document.querySelector('#latest-commit a');
-							ele.innerText =	"#" + event.payload.head.slice(0, 7);
-							ele.href = "https://github.com/"+event.repo.name+"/commit/"+event.payload.head;
-							break;
-						}
-					}
-				}
+        httpRequest.onreadystatechange = () => {
+          let githubEvents = JSON.parse(httpRequest.responseText);
 
-				httpRequest.open('GET', 'https://api.github.com/users/achie27/events?per_page=100');
-				httpRequest.send();
-			};
+          for (let event of githubEvents) {
+            if (event["type"] == "PushEvent") {
+              let ele = document.querySelector("#latest-commit a");
+              ele.innerText = "#" + event.payload.head.slice(0, 7);
+              ele.href =
+                "https://github.com/" +
+                event.repo.name +
+                "/commit/" +
+                event.payload.head;
+              break;
+            }
+          }
+        };
 
-		</script>
-
-	</head>
-	<body>
-		<header>
-			<div class="container">
-				<div class="header-inner">
-					<div class="header-banner">
-						<div class="header-banner-content">
-							<font size="3" color="white">
-								GG-ing at distributed systems, infosec, and AWS.
-							</font>
-						</div>
-					</div>
-					<div class="latest-commit-wrapper">
-						<div class="latest-commit-wrapper-content">
-							<div id="latest-commit">
-								<span>Latest commit</span> -  
-								<a target="_blank" href=""></a>
-							</div>	
-						</div>
-					</div>
-				</div>				
-			</div>
-		</header>
-		<div class="details">
-			<div class="me">
-				<div class="me-content">
-					<font size="10">Archit</font>
-					<font size="10">Mathur</font>
-					<font color="grey" size="3"><b>SSE @ Toptal, Remote</b></font>
-				</div>
-			</div>
-			<div class="my-profiles">
-				<div class="my-profiles-wrapper-item">
-					<a href="https://github.com/achie27">
-						<div class="my-profiles-item">
-							<i class="olive github icon"></i>
-						</div>					
-					</a>
-				</div>
-				<div class="my-profiles-wrapper-item">
-					<a href="https://stackoverflow.com/users/6004293/achie27">
-						<div class="my-profiles-item">
-							<i class="orange stack overflow icon"></i>
-						</div>
-					</a>
-				</div>
-				<div class="my-profiles-wrapper-item">
-					<a href="https://medium.com/@achie27">
-						<div class="my-profiles-item">
-							<i class="white medium icon"></i>
-						</div>
-					</a>
-				</div>
-				<div class="my-profiles-wrapper-item">
-					<a href="https://www.linkedin.com/in/archit-mathur/">
-						<div class="my-profiles-item">
-							<i class="blue linkedin icon"></i>
-						</div>
-					</a>
-				</div>
-				<div class="my-profiles-wrapper-item">
-					<a href="https://angel.co/architmathur">
-						<div class="my-profiles-item">
-							<i class="purple angellist icon"></i>
-						</div>
-					</a>
-				</div>
-				<div class="my-profiles-wrapper-item">
-					<a href="./resume/">
-						<div class="my-profiles-item">
-							<h2>resume</h2>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<div class="container">
-				<div class="footer-inner">
-					<div class="footer-text">
-						<font size="3" color="white">
-							<a href="mailto:architmathur2011@gmail.com">
-								Reach out here
-							</a>
-						</font>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</body>
+        httpRequest.open(
+          "GET",
+          "https://api.github.com/users/achie27/events?per_page=100"
+        );
+        httpRequest.send();
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <div class="header-banner">
+            <div class="header-banner-content">
+              <font size="3" color="white">
+                GG-ing at distributed systems, infosec, and AWS.
+              </font>
+            </div>
+          </div>
+          <div class="latest-commit-wrapper">
+            <div class="latest-commit-wrapper-content">
+              <div id="latest-commit">
+                <span>Latest commit</span> -
+                <a target="_blank" href=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="details">
+      <div class="me">
+        <div class="me-content">
+          <font size="10">Archit</font>
+          <font size="10">Mathur</font>
+          <font color="grey" size="3"><b>SSE @ Toptal, Remote</b></font>
+        </div>
+      </div>
+      <div class="my-profiles">
+        <div class="my-profiles-wrapper-item">
+          <a href="https://github.com/achie27">
+            <div class="my-profiles-item">
+              <i class="olive github icon"></i>
+            </div>
+          </a>
+        </div>
+        <div class="my-profiles-wrapper-item">
+          <a href="https://stackoverflow.com/users/6004293/achie27">
+            <div class="my-profiles-item">
+              <i class="orange stack overflow icon"></i>
+            </div>
+          </a>
+        </div>
+        <div class="my-profiles-wrapper-item">
+          <a href="https://medium.com/@achie27">
+            <div class="my-profiles-item">
+              <i class="white medium icon"></i>
+            </div>
+          </a>
+        </div>
+        <div class="my-profiles-wrapper-item">
+          <a href="https://www.linkedin.com/in/archit-mathur/">
+            <div class="my-profiles-item">
+              <i class="blue linkedin icon"></i>
+            </div>
+          </a>
+        </div>
+        <div class="my-profiles-wrapper-item">
+          <a href="https://angel.co/architmathur">
+            <div class="my-profiles-item">
+              <i class="purple angellist icon"></i>
+            </div>
+          </a>
+        </div>
+        <div class="my-profiles-wrapper-item">
+          <a href="./resume/">
+            <div class="my-profiles-item">
+              <h2>resume</h2>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-text">
+            <font size="3" color="white">
+              <a href="mailto:architmathur2011@gmail.com"> Reach out here </a>
+            </font>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
