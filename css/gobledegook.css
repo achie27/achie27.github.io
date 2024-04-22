@@ -14,7 +14,7 @@ header {
 }
 
 .header-inner {
-  height: 12.5vh;
+  height: 10vh;
 }
 
 .header-banner {
@@ -128,20 +128,34 @@ footer {
 
 .footer-inner {
   clear: both;
-  height: 12.5vh;
+  height: 15vh;
 }
 
 .footer-text {
-  clear: both;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   height: 100%;
+  width: 50%;
+  float: right;
 }
 
-.footer-text font {
-  float: right;
+
+.footer-spotify {
+  width: 50%;
+  float: left;
+  height: 100%;
+}
+
+.footer-spotify-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  float: left;
+  height: 100%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -181,5 +195,9 @@ footer {
   }
   .footer-inner font {
     font-size: small;
+  }
+
+  .footer-spotify {
+    display: none;
   }
 }
