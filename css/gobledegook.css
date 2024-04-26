@@ -87,6 +87,11 @@ header {
   margin: 12.5px;
 }
 
+.me-content-subheader {
+  padding: 12px;
+  text-align: center;
+}
+
 .my-profiles {
   width: 66%;
   height: 100%;
