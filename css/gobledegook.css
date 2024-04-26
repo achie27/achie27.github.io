@@ -92,6 +92,11 @@ header {
   text-align: center;
 }
 
+.me-content-subheader font {
+  margin: 4px;
+}
+
+
 .my-profiles {
   width: 66%;
   height: 100%;
